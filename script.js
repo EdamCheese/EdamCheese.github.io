@@ -145,7 +145,7 @@ draw = () => {
             ctx.font = "bold " + camzoom *camerazoom * 15 + "px monospace";
 
             ctx.fillStyle = "#333333"
-            ctx.fillText(letter.l, camzoom *camerazoom *(letter.x-rad/4+camera[0]), camzoom *camerazoom * (letter.y+rad/4+camera[1]))
+            ctx.fillText(letter.l, camzoom *camerazoom *(letter.x-rad/4+camera[0]-2), camzoom *camerazoom * (letter.y+rad/4+camera[1]))
         }
         ctx.fillStyle = "#ffffff";
         ctx.fillRect(0,0, canvas.width, 50)
