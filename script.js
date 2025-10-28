@@ -135,7 +135,8 @@ draw = () => {
         }
     
         ctx.beginPath();
-        ctx.arc(camzoom *camerazoom * (letter.x+camera[0]), camzoom *camerazoom * (letter.y+camera[1]), camzoom *camerazoom * (rad + 1), 0, 2 * Math.PI);
+        // ctx.arc(camzoom *camerazoom * (letter.x+camera[0]), camzoom *camerazoom * (letter.y+camera[1]), camzoom *camerazoom * (rad + 1), 0, 2 * Math.PI);
+        ctx.rect(camzoom *camerazoom * (letter.x+camera[0]), camzoom *camerazoom * (letter.y+camera[1]),camzoom *camerazoom * (rad+1),camzoom *camerazoom * (rad+1))
         ctx.lineWidth = camzoom *camerazoom * 2;
          
         ctx.stroke();
