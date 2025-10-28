@@ -46,8 +46,8 @@ rawLinks = [
 
 
 rawWords = [
-    {'x': 500.0, 'y': 0.0, 'ans': 'demilitarize', 'clue': 'Remove forces from Zaire, limited badly.'}, 
-    {'x': -500.0, 'y': 0.0, 'ans': 'seed', 'clue': 'View world\'s conclusion and origin'}, 
+    {'x': 0.0, 'y': 500.0, 'ans': 'demilitarize', 'clue': 'Remove forces from Zaire, limited badly.'}, 
+    {'x': 0.0, 'y': 0.0, 'ans': 'seed', 'clue': 'View world\'s conclusion and origin'}, 
     ]
 let refs = {};
 
