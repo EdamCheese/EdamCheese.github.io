@@ -36,7 +36,6 @@ window.addEventListener('resize', resize);
 rad = 10;
 
 rawLinks = [
-    [['ai apocalypse', 0], ['cloudy with a chance of meatballs', 12]],
     [['demilitarize', 0], ['seed', 3]],
     [['demilitarize', 1], ['seed', 1]],
     [['demilitarize', 11], ['seed', 2]],
