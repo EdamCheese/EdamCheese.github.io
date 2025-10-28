@@ -65,7 +65,7 @@ for (let i of rawWords) {
     refs[i.ans][j] = o;
     o.w = word;
     o.a = i.ans[j];
-    o.x = i.x + j * (rad-1) * 2;
+    o.x = i.x + j * (rad+1) * 2;
     o.y = i.y;
     o.ps = [];
     word.push(o);
