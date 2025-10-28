@@ -1,4 +1,4 @@
-<!doctype html>
+
 <html lang="en" style = "margin:0">
 
 <body style="border:0px; padding:0px; margin:0px">
