@@ -36,7 +36,6 @@ window.addEventListener('resize', resize);
 rad = 10;
 
 rawLinks = [
-    [['demilitarize', 0], ['seed', 3]],
     [['demilitarize', 1], ['seed', 1]],
     [['demilitarize', 11], ['seed', 2]],
 
@@ -46,8 +45,9 @@ rawLinks = [
 
 
 rawWords = [
-    {'x': 0.0, 'y': 500.0, 'ans': 'demilitarize', 'clue': 'Remove forces from Zaire, limited badly.'}, 
-    {'x': 0.0, 'y': 0.0, 'ans': 'seed', 'clue': 'View world\'s conclusion and origin'}, 
+    {'x': 0.0, 'y': 150.0, 'ans': 'demilitarize', 'clue': 'Remove forces from Zaire, limited badly.'}, 
+    {'x': 0.0, 'y': 0.0, 'ans': 'seed', 'clue': 'View world\'s conclusion and origin'},
+    {'x':0.0, 'y': 300.0, 'ans': 'carbon', 'clue': 'Rock'}, 
     ]
 let refs = {};
 
@@ -57,6 +57,7 @@ for (let i of rawWords) {
   refs[i.ans] = {};
   let word = [];
   word.clue = i.clue;
+  word.n = rawWords.indexOf(i)+1;
   for (let j = 0; j < i.ans.length; j++) {
     if (i.ans[j] === ' ') {
       continue;
@@ -68,6 +69,8 @@ for (let i of rawWords) {
     o.x = i.x + j * (rad+1) * 2;
     o.y = i.y;
     o.ps = [];
+    (j == 0) ? o.f = 1 : o.f = 0;
+    o.n = rawWords.indexOf(i)
     word.push(o);
   }
   words.push(word);
@@ -124,8 +127,10 @@ draw = () => {
        
       
         ctx.strokeStyle = "#00ff00"
+        ctx.fillStyle = "#dde8eb"
         if(word == selected.w){
             ctx.strokeStyle = "#008800"
+            ctx.fillStyle = "#b3bbbd"
         }
         if(selected.ps && selected.ps.includes(letter)){
             ctx.strokeStyle = "#ff8888"
@@ -135,15 +140,20 @@ draw = () => {
         }
     
         ctx.beginPath();
-        ctx.arc(camzoom *camerazoom * (letter.x+camera[0]), camzoom *camerazoom * (letter.y+camera[1]), camzoom *camerazoom * (rad + 1), 0, 2 * Math.PI);
-        ctx.rect(camzoom *camerazoom * (letter.x+camera[0]-(rad + 1)), camzoom *camerazoom * (letter.y+camera[1]-(rad + 1)),camzoom *camerazoom * 2*(rad+1),camzoom *camerazoom * 2*(rad+1))
+        ctx.font = "bold " + camzoom *camerazoom * 15 + "px monospace"
+        if (letter.f == 1){
+            ctx.fillRect(camzoom *camerazoom * (letter.x+camera[0]-(rad + 1)), camzoom *camerazoom * (letter.y+camera[1]-(rad + 1)),camzoom *camerazoom * 2*(rad+1),camzoom *camerazoom * 2*(rad+1))
+            ctx.rect(camzoom *camerazoom * (letter.x+camera[0]-(rad + 1)), camzoom *camerazoom * (letter.y+camera[1]-(rad + 1)),camzoom *camerazoom * 2*(rad+1),camzoom *camerazoom * 2*(rad+1))
+            // ctx.fillText("1", camzoom *camerazoom *(letter.x-rad/4+camera[0]-1.5), camzoom *camerazoom * (letter.y+rad/4+camera[1]+1))
+        } else {
+            ctx.arc(camzoom *camerazoom * (letter.x+camera[0]), camzoom *camerazoom * (letter.y+camera[1]), camzoom *camerazoom * (rad + 1), 0, 2 * Math.PI);
+        }
         ctx.lineWidth = camzoom *camerazoom * 2;
          
         ctx.stroke();
 
         if(letter.l){
             ctx.font = "bold " + camzoom *camerazoom * 15 + "px monospace";
-
             ctx.fillStyle = "#333333"
             ctx.fillText(letter.l, camzoom *camerazoom *(letter.x-rad/4+camera[0]-1.5), camzoom *camerazoom * (letter.y+rad/4+camera[1]+1))
         }
@@ -156,13 +166,19 @@ draw = () => {
         if(selected.w) {
             ctx.fillText(selected.w.clue, 10, 30)
         }
+        if(letter.f == 1){
+          ctx.font = "bold " + camzoom *camerazoom * 10 + "px monospace"
+          ctx.fillStyle = "#333333"
+          // ctx.fillText(word.n, camzoom *camerazoom *(letter.x-rad/4+camera[0]-6), camzoom *camerazoom * (letter.y+rad/4+camera[1]-6))
+          ctx.fillText(word.n*10, camzoom *camerazoom *(letter.x-rad/4+camera[0]-6), camzoom *camerazoom * (letter.y+rad/4+camera[1]-6))
 
+        }
 
 
        
     })});
 
-
+// Win condition
     checkwin();
 
 }
@@ -173,7 +189,7 @@ function checkwin(){
     won = true;
     words.forEach(word => {
         word.forEach(letter => {
-            if(!letter.l || letter.l != letter.a) won = false;
+            if((!letter.l || letter.l != letter.a)&& letter.f == 0) won = false;
         })
     })
     if(won && !alerted) {
@@ -183,23 +199,25 @@ function checkwin(){
 }
 
 
-
+// On click, find the closest thing to the cursor, and select that
 canvas.onclick = e=>{
     clickx = (e.offsetX / camerazoom/camzoom) - camera[0];
     clicky = (e.offsetY / camerazoom/camzoom) - camera[1];
 
     closest = {x:-1, y:-1}
   words.forEach(word => { word.forEach(letter => {
-    if(closest.x == -1 || distance(clickx, clicky, letter.x, letter.y) < distance(clickx, clicky, closest.x, closest.y)){
+    if((closest.x == -1 || distance(clickx, clicky, letter.x, letter.y) < distance(clickx, clicky, closest.x, closest.y)) && letter.f == 0){
         closest = letter
     }
   })})
   selected = closest;
+
   draw();
 }
 
 // typing stuff from here until drawing stuff
 
+// When key is pressed, put that letter in the selected circle, and all those connected
 function type(key){
     if (!selected.w) {
       return;
@@ -211,6 +229,8 @@ function type(key){
     selected = selected.next;
     draw();
 }
+// same for deleting letters
+oldSelected = []
 
 function untype(){
   if (!selected.w) {
@@ -221,10 +241,18 @@ function untype(){
         for (let i of selected.ps) {
           i.l = undefined;
         }
+        oldSelected = selected;
         selected = selected.prev;
+        if(selected.f == 1){
+            selected = oldSelected
+        }
     }
     else{
+        oldSelected = selected;
         selected = selected.prev;
+        if(selected.f == 1){
+            selected = oldSelected
+        }
         selected.l = undefined;
         for (let i of selected.ps) {
           i.l = undefined;
@@ -245,7 +273,11 @@ window.onkeydown = e => {
         untype();
     }
     if(e.key == "ArrowLeft"){
+        oldSelected = selected;
         selected = selected.prev;
+        if(selected.f == 1){
+            selected = oldSelected
+        }
         draw();
 
     }
