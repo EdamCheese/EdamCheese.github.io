@@ -8,7 +8,7 @@
 <style>
 
 html{
-    background:  #ffffff;
+    background:  #ddddff;
 }
 
 div{
