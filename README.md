@@ -14,8 +14,8 @@ html{
 div{
     font-family:  sans-serif;
     font-size: 15pt;
-    margin-left:  auto;
-    margin-right: auto;
+    margin-left:  50px;
+    margin-right: 50px;
     
 
 }
@@ -64,8 +64,8 @@ canvas {
 }
 
 input:not([type='checkbox']) {
-    margin-left:  auto;
-    margin-right: auto;
+    margin-left:  50px;
+    margin-right: 50px;
     display: block;
     font-size:30px;
     background-color:#f2f2ff;
