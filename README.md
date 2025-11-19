@@ -8,13 +8,13 @@
 <style>
 
 html{
-    background:  #ddddff;
+    background:  #ffffff;
 }
 
 div{
     font-family:  sans-serif;
     font-size: 15pt;
-    margin-left:  50px;
+    margin-left:  10px;
     margin-right: 50px;
     
 
@@ -36,7 +36,7 @@ iframe{
     width: 80%;
     aspect-ratio: 16 / 9;
     display:block;
-    margin: auto;
+    margin: 10px;
 }
 
 .rule{
@@ -106,6 +106,8 @@ input:not([type='checkbox']) {
 <li>Vegas casino has a thousand game masters. Excellent!</li>
 </ul>  
 
+<div style="text-align:center"> 
 <a href="https://www.callingit.in/1/#ZEX22+6tANJ8xeuu-sc6kYiFbDryPHfB7uC/Vb8hwqbAELOUI-QSBDcnlwdGljIExldHRlciBXZWI=-">Check your answer here!</a>
+</div>
 
 </html>
