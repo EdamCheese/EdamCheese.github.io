@@ -24,8 +24,8 @@ draw = maindraw;
 
 
 function resize(){
-    canvas.height = window.innerHeight * 0.9;
-    canvas.width = window.innerWidth * 0.8;
+    canvas.height = window.innerHeight * 0.8;
+    canvas.width = window.innerWidth * 0.5;
     draw();
 }
 
