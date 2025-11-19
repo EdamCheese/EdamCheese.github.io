@@ -74,4 +74,38 @@ input:not([type='checkbox']) {
     </style>
 <script src="script.js"></script>
 
+<ul>
+<li>59th ambassador in spring</li>
+<li>Allegedly, what you would hear if Big Ben's lost count?</li>
+<li>Alter time, clash with scientist?</li>
+<li>Alternative couple persisted in party, breaking the law?</li>
+<li>Be relaxed in Nebraska compound</li>
+<li>Bends follow function of comfort</li>
+<li>Card game club</li>
+<li>Celebration of crazy last five</li>
+<li>Chinese icons are enthralled by Balkan jive</li>
+<li>Crossing over Africa? Use waypoints!</li>
+<li>Fedallah's leader is Melville's boat worker, perhaps?</li>
+<li>Fine wood lacking height</li>
+<li>I came between Catalan Libertarian leaders and that Spanish group</li>
+<li>Indianapolis to Piran, Slovenia; turbulant rest, approximately one tiny case</li>
+<li>Last of Hertz's values is a puzzle-relevant stat</li>
+<li>Marketplace firm takes question and holds answer</li>
+<li>Milk and rice mixed together is a favourite of Mr Lear</li>
+<li>My very educated mother is diabolical; exchanging daughter for soulless man</li>
+<li>Occasional table you might need for this puzzle</li>
+<li>One cent sci-fi novel is meticulous</li>
+<li>Pepper's family spoke of hero's ghost</li>
+<li>Renault shifted into gear</li>
+<li>Repair behind crucible, mostly cross</li>
+<li>Revamp, I revealed, covers parasite</li>
+<li>Slim straight partner</li>
+<li>Someone who arranges mad march visit, skipping first of month</li>
+<li>Type of lamp layer holds a record</li>
+<li>Unknown journalist follows newspaper I managed</li>
+<li>Vegas casino has a thousand game masters. Excellent!</li>
+</ul>  
+
+<a href="https://www.callingit.in/1/#ZEX22+6tANJ8xeuu-sc6kYiFbDryPHfB7uC/Vb8hwqbAELOUI-QSBDcnlwdGljIExldHRlciBXZWI=-">Check your answer here!</a>
+
 </html>
