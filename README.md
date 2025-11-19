@@ -56,8 +56,8 @@ canvas {
     margin-top:  10px;
     padding-left: 0;
     padding-right: 0;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
     display: block;
     outline: 3px solid #000077;
     border-radius:  10px;
