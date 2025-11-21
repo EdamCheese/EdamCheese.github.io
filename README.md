@@ -103,7 +103,7 @@ input:not([type='checkbox']) {
 <li>Someone who arranges mad march visit, skipping first of month</li>
 <li>Type of lamp layer holds a record</li>
 <li>Unknown journalist follows newspaper I managed</li>
-<li>Vegas casino has a thousand game masters. Excellent!</li>
+<li>Vegas casino game master follows money. Excellent!</li>
 </ul>  
 
 <div style="text-align:center"> 
