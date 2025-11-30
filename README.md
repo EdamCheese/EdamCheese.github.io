@@ -1,6 +1,7 @@
 
 <html lang="en" style = "margin:0">
 <p> The following interactive element requires a keyboard and mouse to use. Drag to move around the web. Use the scroll wheel to zoom in and out. Circles can be filled with one letter each by clicking and typing. </p>
+<p>Please do not view the source code whilst solving this puzzle.</p>
 <body style="border:0px; padding:0px; margin:0px">
 
 <canvas id="gameCanvas"></canvas>
@@ -105,9 +106,8 @@ input:not([type='checkbox']) {
 <li>Unknown journalist follows newspaper I managed</li>
 <li>Vegas casino game master follows money. Excellent!</li>
 </ul>  
-<p> The technical implementation of this puzzle is modified from work by Jen McTeague, which is itself based on work by Jack Lance. Please do not view the source code whilst solving this puzzle.</p
 <div style="text-align:center"> 
 <a href="https://www.callingit.in/1/#ZEX22+6tANJ8xeuu-sc6kYiFbDryPHfB7uC/Vb8hwqbAELOUI-QSBDcnlwdGljIExldHRlciBXZWI=-">Check your answer here!</a>
 </div>
-
+<p> The technical implementation of this puzzle is modified from work by Jen McTeague, which is itself based on work by Jack Lance.</p>
 </html>
