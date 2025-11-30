@@ -353,7 +353,7 @@ function checkwin(){
         })
     })
     if(won && !alerted) {
-      alert('(11 4)')
+      alert('(12 4)')
       alerted = true;
     }
 }
